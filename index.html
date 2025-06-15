@@ -1,0 +1,191 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FitBay's Home</title>
+    <!-- fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="icon" type="images/png" href="../Image/Ellipse 1.png" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- feather icon -->
+    <script src="https://unpkg.com/feather-icons"></script>
+
+    <!-- mystyle -->
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- Navbar start -->
+
+    <nav class="navbar">
+      <a href="#" class="navbar-logo"><img src="../Image/Logo.png" /></a>
+
+      <div class="navbar-nav">
+        <a href="../FB/FB/Login.php">Member</a>
+        <a href="../FB/FB/Login.php">Personal Trainer</a>
+        <a href="../FB/FB/Login.php">Location</a>
+        <a href="../FB/FB/Login.php">Blog</a>
+        <a href="../FB/FB/Login.php">Account</a>
+      </div>
+
+      <div class="navbar-extra">
+        <a href="../FB/FB/Login.php" id="login" class="btn">Login</a>
+      </div>
+    </nav>
+
+    <!-- Navbar End -->
+
+    <!-- Hero Section Start -->
+
+    <section class="hero" id="home">
+      <main class="content">
+        <h1>
+          Jelajahi Gym Terbaik di Surabaya <br />& Dapatkan Coach Profesional
+        </h1>
+        <a href="../FB/FB/Daftar.html" class="cta">Join Now</a>
+      </main>
+    </section>
+    <!-- Hero Section End -->
+
+    <!-- Membership section start -->
+
+    <section id="mem" class="mem">
+      <div class="member">
+        <div class="grid">
+          <div><img src="../Image/aa.jpg" /></div>
+          <div><img src="../Image/bb.jpg" /></div>
+          <div><img src="../Image/cc.jpg" /></div>
+          <div><img src="../Image/dd.jpg" /></div>
+        </div>
+        <div class="contentmem">
+          <h1>
+            Membership Mulai dari <br />
+            Rp. 80.000/Bulan
+          </h1>
+          <p>
+            Bentuk tubuh idealmu dengan gym terdekat dari lokasimu! <br />Bebas
+            olahraga dan akses seluruh fasilitas gym
+          </p>
+          <a href="../FB/FB/Daftar.html" class="buttonmem"
+            >Lihat Selengkapnya →</a
+          >
+        </div>
+      </div>
+    </section>
+
+    <!-- Membership Section end -->
+
+    <!-- Lokasi Section Start -->
+
+    <section id="loc" class="lokasi">
+      <h1>Pilih Lokasi mu dan Temukan Gym<br />Terdekat dari Lokasimu</h1>
+
+  <div class="filter">
+  <form method="GET">
+    <select name="id_kategori_alamat" onchange="this.form.submit()">
+      <option value="">Semua Lokasi</option>
+      <?php foreach ($resultKategori as $kategori): ?>
+        <option value="<?= $kategori['id_kategori_alamat'] ?>" <?= isset($_GET['id_kategori_alamat']) && $_GET['id_kategori_alamat'] == $kategori['id_kategori_alamat'] ? 'selected' : '' ?>>
+          <?= htmlspecialchars($kategori['nama_kategori_alamat']) ?>
+        </option>
+      <?php endforeach; ?>
+    </select>
+  </form>
+</div>
+
+<div class="gym-list">
+  <?php foreach ($gymList as $gym): ?>
+    <div class="gym-item">
+      <img src="data:image/jpeg;base64,<?php echo base64_encode($gym['header_gym']); ?>" alt="Gym Image">
+    </div>
+  <?php endforeach; ?>
+</div>
+
+
+      <a href="../FB/FB/Daftar.html" class="lihat-lebih"
+        >Lihat Lebih Banyak →</a
+      >
+    </section>
+
+    <!-- Lokasi Section End-->
+
+    <!-- Personal Trainer Start -->
+
+    <section id="pers" class="pers">
+      <div class="perso">
+        <div class="grip">
+          <div><img src="../Image/sam.jpg" /></div>
+          <div><img src="../Image/ramon.jpg" /></div>
+          <div><img src="../Image/cbum.jpg" /></div>
+          <div><img src="../Image/david.jpg" /></div>
+        </div>
+        <div class="contentperso">
+          <h1>
+            Personal Trainer Berpengalaman Mulai <br />
+            dari Rp. 50.000/ Sesi
+          </h1>
+          <p>
+            Bentuk tubuh idealmu dengan program latihan yang sudah <br />
+            ditentukan oleh traineer berpengalaman
+          </p>
+          <a href="../FB/FB/Daftar.html" class="buttonperso"
+            >Lihat Selengkapnya →</a
+          >
+        </div>
+      </div>
+    </section>
+
+    <!-- Personal Trainer End -->
+
+    <!-- Footer Start -->
+
+    <footer>
+      <div class="footer-container">
+        <div class="logo">
+          <img src="../Image/Logo.png" />
+        </div>
+        <div class="footer-sections">
+          <div class="footer-section">
+            <h3>About Us</h3>
+            <a href="../FB/FB/Login.php">Blog</a>
+            <a href="https://wa.me/6282119745331">Contact</a>
+          </div>
+          <div class="footer-section">
+            <h3>Services</h3>
+            <a href="#mem">Membership</a>
+            <a href="#pers">Personal Trainer</a>
+          </div>
+          <div class="footer-section">
+            <h3>Feature</h3>
+            <a href="#loc">Location</a>
+          </div>
+        </div>
+        <div class="social-icons">
+          <a href="https://www.instagram.com/javiereles"
+            ><img src="../Image/ig.png"
+          /></a>
+          <a href="https://twitter.com/rezatriardian"
+            ><img src="../Image/twt.png"
+          /></a>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Footer End -->
+
+    <!-- feather icons -->
+    <script>
+      feather.replace();
+    </script>
+  </body>
+</html>
+
+<!-- Document presentasi -->
+<!-- https://docs.google.com/document/d/1tvnCVTO4POxxGnAd8ab-432tDUMPJn1C4BouJDk1gzI/edit?tab=t.0 -->
